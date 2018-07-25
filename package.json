@@ -17,6 +17,10 @@
     "babel-plugin",
     "jsx"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandgupta193/babel-plugin-jsx-element-stripper"
+  },
   "author": "Anand Gupta",
-  "license": "ISC"
+  "license": "MIT"
 }
