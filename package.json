@@ -1,0 +1,22 @@
+{
+  "name": "babel-plugin-jsx-element-stripper",
+  "version": "1.0.0",
+  "description": "An experimental babel plugin to strip some specific JSX elements.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.15",
+    "babel-register": "^6.3.13",
+    "mocha": "^2.3.4"
+  },
+  "keywords": [
+    "babel-plugin",
+    "jsx"
+  ],
+  "author": "Anand Gupta",
+  "license": "ISC"
+}
