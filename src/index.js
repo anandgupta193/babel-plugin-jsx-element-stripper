@@ -7,6 +7,32 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (babel) {
     var t = babel.types;
 
+    /**
+   *
+   * Implemented Generic Traverse method for traversing tree recursively
+   * 
+   * @param {*} path
+   * @param {*} state
+   * 
+   */
+    function genericTraverse(path) {
+
+        /**
+         * Traversing AST and transforming expressions and custom components.
+         */
+        path.traverse({
+
+            JSXElement: function JSXOpeningElement(path) {
+                path.node.openingElement.attributes.forEach(function (elem) {
+                    if (elem.name.name === 'mobile') {
+                        path.remove();
+                    }
+                });
+
+            }
+        });
+
+    }
 
     return {
         visitor: {
@@ -25,12 +51,9 @@ exports.default = function (babel) {
                 });
 
                 Object.keys(state.classMethods).forEach(element => {
-                    if (element === 'render') {
 
-                        console.log(element);
+                    genericTraverse(state.classMethods[element], state);
 
-                        // state.mainPlace.replaceWith(t.Program([t.expressionStatement(renderReturn)]));
-                    }
                 });
             }
         }
