@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsx-element-stripper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An experimental babel plugin to strip some specific JSX elements.",
   "main": "src/index.js",
   "scripts": {
