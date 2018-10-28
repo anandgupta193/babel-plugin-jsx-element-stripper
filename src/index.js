@@ -14,7 +14,8 @@ exports.default = function (babel) {
                     path.node.arguments.forEach(function (elem) {
                         if (elem.type === 'ObjectExpression') {
                             elem.properties.forEach(function (props) {
-                                if (props.key.name === 'mobile') {
+                                //checking if props has a key called 'key'
+                                if (props.hasOwnProperty("key") && props.key.name === 'mobile') {
                                     path.remove();
                                 }
                             });
